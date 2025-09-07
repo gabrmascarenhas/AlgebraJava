@@ -25,22 +25,34 @@ public class LinearAlgebra {
     }
 
     public static Matrix sum(Matrix a, Matrix b){
-        Matrix sum = new Matrix(a.getRows(), b.getCols(),new float[a.getRows() * b.getCols()]);
+        Matrix sumMatrix = new Matrix(a.getRows(), b.getCols(),new float[a.getRows() * b.getCols()]);
         if(a.getCols() == b.getCols() && a.getRows() == b.getRows()){
             for(int j = 0; j < a.getRows(); j++){
                 for(int k = 0; k < b.getCols(); k++){
-                    sum.setElements(j, k, (a.getElements(j, k) + b.getElements(j, k)));
+                    sumMatrix.setElements(j, k, (a.getElements(j, k) + b.getElements(j, k)));
                 }
             }
-            return sum;
+            return sumMatrix;
+        } else {
+            return sumMatrix;
+        }
+    }
+
+    public static Vector sum(Vector a1, Vector b1){
+        Vector sumVector = new Vector(a1.getDim(), new float[b1.getDim()]);
+        if(a1.getDim() == b1.getDim()) {
+            for(int i = 0; i < a1.getDim(); i++){
+                sumVector.setElements( i,a1.getElements(i) + b1.getElements(i));
+
+        }
+            return sumVector;
 
         } else {
 
-
-            return sum;
+            return sumVector;
         }
-
     }
+
    // public static Vector sum(Vector a, Vector b){
 
   //  }

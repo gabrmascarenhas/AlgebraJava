@@ -69,7 +69,25 @@ public class Main {
 
         System.out.println("Soma:");
 
-        Matrix sum = LinearAlgebra.sum(a, b);
-        sum.print();
+        Matrix sumMatrix = LinearAlgebra.sum(a, b);
+        sumMatrix.print();
+        System.out.println();
+
+        System.out.println("Soma de Vetores: ");
+        Vector a1 = new Vector(9, new float[]{100, 200, 300, 400, 500, 600, 700, 800, 900});
+        Vector b1 = new Vector(9, new float[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
+
+        System.out.println("Vetor A: ");
+        a1.print();
+        System.out.println();
+
+        System.out.println("Vetor B: ");
+        b1.print();
+        System.out.println();
+
+        System.out.println("Soma: ");
+        Vector sumVector = LinearAlgebra.sum(a1,b1);
+        sumVector.print();
+        System.out.println();
     }
 }
