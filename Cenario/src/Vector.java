@@ -27,4 +27,13 @@ public class Vector {
         System.out.println("dim = " + dim);
         System.out.println(Arrays.toString(elements));
     }
+    public int getDim(){
+        return dim;
+    }
+    public float[] getAllElements(){
+        return elements;
+    }
+
+
+
 }

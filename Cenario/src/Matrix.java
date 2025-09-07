@@ -14,7 +14,7 @@ public class Matrix {
         this.elements = new float[rows * cols];
         this.matrix = new float[rows][cols];
 
-        for (int i = 0; i < (rows * cols) ; i++) {
+        for(int i = 0; i < (rows * cols) ; i++) {
             this.elements[i] = elements[i];
         }
         for(int j = 0; j < rows; j++){
@@ -41,6 +41,15 @@ public class Matrix {
 
     public void setElements(int i, int j, float value) {
         matrix[i][j] = value;
+    }
+    public int getRows() {
+        return rows;
+    }
+    public int getCols() {
+        return cols;
+    }
+    public float[] getAllElements() {
+        return elements;
     }
 
 
