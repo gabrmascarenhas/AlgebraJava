@@ -89,5 +89,27 @@ public class Main {
         Vector sumVector = LinearAlgebra.sum(a1,b1);
         sumVector.print();
         System.out.println();
+
+
+        System.out.println();
+        System.out.println("Produto de matrizes e vetores:");
+        System.out.println("Usando a1, a2, b1 e b2:");
+        Matrix b12 = new Matrix(3, 2, new float[]{10, 20, 30, 40, 50, 60});
+        System.out.println();
+        Matrix timesMatrix = LinearAlgebra.times(a, b);
+        timesMatrix.print();
+        System.out.println();
+        Matrix dotMatrix = LinearAlgebra.dot(a, b12);
+        dotMatrix.print();
+        System.out.println();
+
+        Matrix a12 = new Matrix(3, 3, new float[]{
+                100, 200, 300,
+                400, 500, 600,
+                700, 800, 900
+        });
+
+        Matrix gaussMatrix = LinearAlgebra.gauss(a12);
+        gaussMatrix.print();
     }
 }
