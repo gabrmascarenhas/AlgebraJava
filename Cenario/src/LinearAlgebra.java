@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class LinearAlgebra {
     /* static: metodo pertencente á classe, e pode ser chamada sem precisar criar
      * um objeto */
@@ -53,8 +51,76 @@ public class LinearAlgebra {
         }
     }
 
-   // public static Vector sum(Vector a, Vector b){
+    public static Matrix times(Matrix a, Matrix b) {
+        Matrix timesMatrix = new Matrix(a.getRows(), b.getCols(), new float[a.getRows() * b.getCols()]);
+        for (int i = 0; i < a.getRows(); i++) {
+            for (int j = 0; j < a.getCols(); j++) {
+                timesMatrix.setElements(i, j, a.getElements(i, j) * b.getElements(i, j));
+            }
+        }
+        return timesMatrix;
+    }
 
-  //  }
+
+    public static Matrix dot(Matrix a, Matrix b){
+        Matrix dotMatrix = new Matrix(a.getRows(), b.getCols(), new float[a.getRows() * b.getCols()]);
+
+            for (int i = 0; i < a.getRows(); i++) {
+                for (int j = 0; j < b.getCols(); j++) {
+                    float soma = 0;
+                    for (int k = 0; k < a.getCols(); k++) {
+                        soma += a.getElements(i, k) * b.getElements(k, j);
+                    }
+                    dotMatrix.setElements(i, j, soma);
+                            }
+
+                    }
+        return dotMatrix;
+    }
+public static Matrix gauss(Matrix a) {
+    Matrix gaussMatrix = new Matrix(a.getRows(), a.getCols(), new float[a.getRows() * a.getCols()]);
+    for(int j = 0; j < a.getRows(); j++){
+        for(int k = 0; k < a.getCols(); k++){
+            gaussMatrix.setElements(j, k, a.getElements(j , k));
+        }
+    }
+    for(int i = 0; i < a.getRows(); i++){
+        float pivot = gaussMatrix.getElements(i, i);
+        if (pivot == 0) continue;
+
+
+        for (int j = i + 1; j < a.getRows(); j++) {
+            float fator = gaussMatrix.getElements(j, i) / pivot;
+            for (int k = i; k < a.getCols(); k++) {
+                float newElement = gaussMatrix.getElements(j, k) - fator * gaussMatrix.getElements(i, k);
+                gaussMatrix.setElements(j, k, newElement);
+            }
+        }
+    }
+
+    return gaussMatrix;
+}
+
+
 
 }
+
+
+
+
+
+
+
+
+            //        if (a.getCols() == b.getRows()) {
+            //            timesMatrix = new Matrix(a.getRows(), b.getCols(), new float[a.getRows() * b.getCols()]);
+            //            for (int i = 0; i < a.getRows(); i++) {
+            //                for (int j = 0; j < b.getCols(); j++) {
+            //                    float soma = 0;
+            //                    for (int k = 0; k < a.getCols(); k++) {
+            //                        soma += a.getElements(i, k) * b.getElements(k, j);
+            //                    }
+            //                    timesMatrix.setElements(i, j, soma);
+            //                }
+            //            }
+            //        }
