@@ -2,38 +2,22 @@ import java.util.Arrays;
 
 public class Vector {
     private int dim;
-    private float [] vector;
-    private float[] elements;
-    private float value;
+    private double[] elements;
 
-    public Vector(int dim, float[] elements) {
+    public Vector(int dim, double[] elements) {
         this.dim = dim;
-        this.elements = new float[elements.length];
+        this.elements = new double[elements.length];
         for (int i = 0; i < elements.length; i++) {
             this.elements[i] = elements[i];
         }
     }
 
-    public float getElements(int i) {
-        return elements[i];
-    }
-
-    public void setElements(int i, float value) {
-        elements[i] =  value;
-    }
-
-    public void print(){
-
+    public double getElements(int i) { return elements[i]; }
+    public void setElements(int i, double value) { elements[i] = value; }
+    public void print() {
         System.out.println("dim = " + dim);
         System.out.println(Arrays.toString(elements));
     }
-    public int getDim(){
-        return dim;
-    }
-    public float[] getAllElements(){
-        return elements;
-    }
-
-
-
+    public int getDim() { return dim; }
+    public double[] getAllElements() { return elements; }
 }

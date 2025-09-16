@@ -1,31 +1,26 @@
-import java.util.Scanner;
-
 public class Matrix {
     private int rows;
     private int cols;
-    private float[] elements;
-    private int total;
-    private int cont = 0;
-    private float[][] matrix;
+    private double[] elements;
+    private double[][] matrix;
 
-    public Matrix(int rows, int cols, float[] elements) {
+    public Matrix(int rows, int cols, double[] elements) {
         this.rows = rows;
         this.cols = cols;
-        this.elements = new float[rows * cols];
-        this.matrix = new float[rows][cols];
+        this.elements = new double[rows * cols];
+        this.matrix = new double[rows][cols];
 
-        for(int i = 0; i < (rows * cols) ; i++) {
+        int cont = 0;
+        for (int i = 0; i < rows * cols; i++) {
             this.elements[i] = elements[i];
         }
-        for(int j = 0; j < rows; j++){
-            for(int k = 0; k < cols; k++){
-                matrix[j][k] = elements[cont];
-                cont++;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = elements[cont++];
             }
         }
-
-
     }
+
     public void print() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -35,24 +30,9 @@ public class Matrix {
         }
     }
 
-    public float getElements(int i, int j) {
-        return matrix[i][j];
-    }
-
-    public void setElements(int i, int j, float value) {
-        matrix[i][j] = value;
-    }
-    public int getRows() {
-        return rows;
-    }
-    public int getCols() {
-        return cols;
-    }
-    public float[] getAllElements() {
-        return elements;
-    }
-
-
-
+    public double getElements(int i, int j) { return matrix[i][j]; }
+    public void setElements(int i, int j, double value) { matrix[i][j] = value; }
+    public int getRows() { return rows; }
+    public int getCols() { return cols; }
+    public double[] getAllElements() { return elements; }
 }
-
