@@ -46,6 +46,27 @@ public class LinearAlgebra {
         return result;
     }
 
+    public static Vector times(Vector a, Vector b) {
+    Vector result = new Vector(a.getDim(), new double[a.getDim()]);
+    if (a.getDim() == b.getDim()) {
+        for (int i = 0; i < a.getDim(); i++) {
+            result.setElements(i, a.getElements(i) * b.getElements(i));
+        }
+    }
+    return result;
+    }
+
+    public static Matrix times(double escalar, Matrix a) {
+    Matrix result = new Matrix(a.getRows(), a.getCols(), new double[a.getRows() * a.getCols()]);
+    for (int i = 0; i < a.getRows(); i++) {
+        for (int j = 0; j < a.getCols(); j++) {
+            result.setElements(i, j, escalar * a.getElements(i, j));
+        }
+    }
+    return result;
+    }
+
+
     public static Matrix dot(Matrix a, Matrix b) {
         Matrix result = new Matrix(a.getRows(), b.getCols(), new double[a.getRows() * b.getCols()]);
         for (int i = 0; i < a.getRows(); i++) {
