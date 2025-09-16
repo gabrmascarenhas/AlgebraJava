@@ -66,6 +66,16 @@ public class LinearAlgebra {
     return result;
     }
 
+    // Produto externo entre dois vetores (gera matriz) -> não há necessidade de mudar a saída
+    public static Matrix dot(Vector a, Vector b) {
+    Matrix result = new Matrix(a.getDim(), b.getDim(), new double[a.getDim() * b.getDim()]);
+    for (int i = 0; i < a.getDim(); i++) {
+        for (int j = 0; j < b.getDim(); j++) {
+            result.setElements(i, j, a.getElements(i) * b.getElements(j));
+        }
+    }
+    return result;
+    }
 
     public static Matrix dot(Matrix a, Matrix b) {
         Matrix result = new Matrix(a.getRows(), b.getCols(), new double[a.getRows() * b.getCols()]);
