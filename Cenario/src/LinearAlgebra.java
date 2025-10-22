@@ -37,10 +37,19 @@ public class LinearAlgebra {
     }
 
     public static Matrix times(Matrix a, Matrix b) {
+        if (a.getCols() != b.getRows()) {
+            throw new IllegalArgumentException("Número de colunas da matriz A deve ser igual ao número de linhas da matriz B.");
+        }
+
         Matrix result = new Matrix(a.getRows(), b.getCols(), new double[a.getRows() * b.getCols()]);
+
         for (int i = 0; i < a.getRows(); i++) {
-            for (int j = 0; j < a.getCols(); j++) {
-                result.setElements(i, j, a.getElements(i, j) * b.getElements(i, j));
+            for (int j = 0; j < b.getCols(); j++) {
+                double sum = 0;
+                for (int k = 0; k < a.getCols(); k++) {
+                    sum += a.getElements(i, k) * b.getElements(k, j);
+                }
+                result.setElements(i, j, sum);
             }
         }
         return result;
