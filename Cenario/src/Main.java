@@ -44,6 +44,7 @@ public class Main {
 
         System.out.println("Vetor v transposta:");
         Vector vTrans = LinearAlgebra.transpose(v);
+        vTrans.print();
         System.out.println();
 
         System.out.println("Soma de matrizes:");
@@ -106,5 +107,19 @@ public class Main {
         Matrix solveMatrix = LinearAlgebra.solve(a14);
         solveMatrix.print();
         System.out.println("X = " + solveMatrix.getElements(0, 3) + ", Y = " + solveMatrix.getElements(1, 3) + ", Z = " + solveMatrix.getElements(2, 3));
+
+
+        System.out.printf("Cenário 2");
+        System.out.println();
+        System.out.println();
+
+        Vector bbzinho = new Vector(3, new double[] {2, 3, 1});
+        Vector penis = Transformations.translate2D(bbzinho, 5, 5);
+        penis.print();
+        Vector bbzao = new Vector(4, new double[] {2, 3, 4, 1});
+        Vector pirocao = Transformations.translate3D(bbzao, 5, 5 ,5);
+        pirocao.print();
+        Vector receba = new Vector(3, new double[] {2, 3, 1});
+        Vector beiramar = Transformations.
     }
 }
