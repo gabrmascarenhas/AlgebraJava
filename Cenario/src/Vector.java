@@ -15,7 +15,6 @@ public class Vector {
     public double getElements(int i) { return elements[i]; }
     public void setElements(int i, double value) { elements[i] = value; }
     public void print() {
-        System.out.println("dim = " + dim);
         System.out.println(Arrays.toString(elements));
     }
     public int getDim() { return dim; }
