@@ -142,6 +142,234 @@ public class Transformations {
         return rotatedVector3dz;
     }
 
+
+    public static Vector reflection2DX(Vector vetor) {
+
+        Matrix R = new Matrix(3, 3, new double[]
+                {
+                   1, 0, 0,
+                   0, -1, 0,
+                   0, 0, 1
+                });
+        Matrix P = new Matrix(3, 1, new double[]{vetor.getElements(0), vetor.getElements(1), 1});
+        Matrix reflexedVetorAsMatrix = LinearAlgebra.dot(R, P);
+        Vector reflexedVetor2dX = new Vector(3, new double[]{
+                reflexedVetorAsMatrix.getElements(0, 0),
+                reflexedVetorAsMatrix.getElements(1, 0),
+                reflexedVetorAsMatrix.getElements(2, 0),
+        });
+        return reflexedVetor2dX;
+
+
+    }
+
+    public static Vector reflection2DY(Vector vetor) {
+
+        Matrix R = new Matrix(3, 3, new double[]
+                {
+                        -1, 0, 0,
+                        0, 1, 0,
+                        0, 0, 1
+                });
+        Matrix P = new Matrix(3, 1, new double[]{vetor.getElements(0), vetor.getElements(1), 1});
+        Matrix reflexedVetorAsMatrix = LinearAlgebra.dot(R, P);
+        Vector reflexedVetor2dY = new Vector(3, new double[]{
+                reflexedVetorAsMatrix.getElements(0, 0),
+                reflexedVetorAsMatrix.getElements(1, 0),
+                reflexedVetorAsMatrix.getElements(2, 0),
+        });
+        return reflexedVetor2dY;
+
+    }
+
+    public static Vector reflection3DX(Vector vetor) {
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        -1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                });
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix reflexedVetorAsMatrix = LinearAlgebra.dot(R, P);
+        Vector reflexedVetor3dX = new Vector(4, new double[]{
+                reflexedVetorAsMatrix.getElements(0, 0),
+                reflexedVetorAsMatrix.getElements(1, 0),
+                reflexedVetorAsMatrix.getElements(2, 0),
+                reflexedVetorAsMatrix.getElements(3, 0)
+        });
+        return reflexedVetor3dX;
+    }
+
+    public static Vector reflection3DY(Vector vetor) {
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        1, 0, 0, 0,
+                        0, -1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                });
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix reflexedVetorAsMatrix = LinearAlgebra.dot(R, P);
+        Vector reflexedVetor3dY = new Vector(4, new double[]{
+                reflexedVetorAsMatrix.getElements(0, 0),
+                reflexedVetorAsMatrix.getElements(1, 0),
+                reflexedVetorAsMatrix.getElements(2, 0),
+                reflexedVetorAsMatrix.getElements(3, 0)
+        });
+        return reflexedVetor3dY;
+    }
+
+    public static Vector reflection3DZ(Vector vetor) {
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, -1, 0,
+                        0, 0, 0, 1
+                });
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix reflexedVetorAsMatrix = LinearAlgebra.dot(R, P);
+        Vector reflexedVetor3dZ = new Vector(4, new double[]{
+                reflexedVetorAsMatrix.getElements(0, 0),
+                reflexedVetorAsMatrix.getElements(1, 0),
+                reflexedVetorAsMatrix.getElements(2, 0),
+                reflexedVetorAsMatrix.getElements(3, 0)
+        });
+        return reflexedVetor3dZ;
+    }
+
+    public static Vector projection2DX (Vector vetor){
+        Matrix R = new Matrix(3, 3, new double[]
+                {
+                        1, 0, 0,
+                        0, 0, 0,
+                        0, 0, 1
+                });
+
+        Matrix P = new Matrix(3, 1, new double[]{vetor.getElements(0), vetor.getElements(1), 1});
+        Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+        Vector projectedVetor2Dx = new Vector(3, new double[]{
+                projectedVetorAsMatrix.getElements(0, 0),
+                projectedVetorAsMatrix.getElements(1, 0),
+                projectedVetorAsMatrix.getElements(2, 0),
+        });
+
+        return projectedVetor2Dx;
+    }
+
+    public static Vector projection2DY (Vector vetor){
+
+        Matrix R = new Matrix(3, 3, new double[]
+                {
+                        0, 0, 0,
+                        0, 1, 0,
+                        0, 0, 1
+                });
+
+        Matrix P = new Matrix(3, 1, new double[]{vetor.getElements(0), vetor.getElements(1), 1});
+        Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+        Vector projectedVetor2Dy = new Vector(3, new double[]{
+                projectedVetorAsMatrix.getElements(0, 0),
+                projectedVetorAsMatrix.getElements(1, 0),
+                projectedVetorAsMatrix.getElements(2, 0),
+        });
+
+        return projectedVetor2Dy;
+    }
+
+    public static Vector projection3DX (Vector vetor){
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        0, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                });
+
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+        Vector projectedVetor3Dx = new Vector(4, new double[]{
+                projectedVetorAsMatrix.getElements(0, 0),
+                projectedVetorAsMatrix.getElements(1, 0),
+                projectedVetorAsMatrix.getElements(2, 0),
+                projectedVetorAsMatrix.getElements(3, 0)
+        });
+
+        return projectedVetor3Dx;
+    }
+    public static Vector projection3DY (Vector vetor){
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        1, 0, 0, 0,
+                        0, 0, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                });
+
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+        Vector projectedVetor3Dy = new Vector(4, new double[]{
+                projectedVetorAsMatrix.getElements(0, 0),
+                projectedVetorAsMatrix.getElements(1, 0),
+                projectedVetorAsMatrix.getElements(2, 0),
+                projectedVetorAsMatrix.getElements(3, 0)
+        });
+
+        return projectedVetor3Dy;
+    }
+
+    public static Vector projection3DZ (Vector vetor){
+
+        Matrix R = new Matrix(4, 4, new double[]
+                {
+                        1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 0, 0,
+                        0, 0, 0, 1
+                });
+
+        Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+        Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+        Vector projectedVetor3Dz = new Vector(4, new double[]{
+                projectedVetorAsMatrix.getElements(0, 0),
+                projectedVetorAsMatrix.getElements(1, 0),
+                projectedVetorAsMatrix.getElements(2, 0),
+                projectedVetorAsMatrix.getElements(3, 0)
+        });
+
+        return projectedVetor3Dz;
+    }
+
+
+public static Vector shearing(Vector vetor, double shx, double shy){
+    Matrix R = new Matrix(3, 3, new double[]
+            {
+                    1, shx, 0,
+                    shy, 1, 0,
+                    0, 0, 1
+            });
+
+    Matrix P = new Matrix(3, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
+    Matrix projectedVetorAsMatrix = LinearAlgebra.dot(R, P);
+
+    Vector shearingVetor2d = new Vector(3, new double[]{
+            projectedVetorAsMatrix.getElements(0, 0),
+            projectedVetorAsMatrix.getElements(1, 0),
+            projectedVetorAsMatrix.getElements(2, 0),
+    });
+    return shearingVetor2d;
+    }
 }
 
 
