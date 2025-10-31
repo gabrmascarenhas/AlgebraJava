@@ -108,18 +108,72 @@ public class Main {
         solveMatrix.print();
         System.out.println("X = " + solveMatrix.getElements(0, 3) + ", Y = " + solveMatrix.getElements(1, 3) + ", Z = " + solveMatrix.getElements(2, 3));
 
-
+        System.out.println();
         System.out.printf("Cenário 2");
         System.out.println();
+
+
+        Vector vetor2d = new Vector(3, new double[] {2, 3, 1});
+        Vector vetor2dtranslate = Transformations.translate2D(vetor2d, 5, 5);
+
         System.out.println();
 
-        Vector bbzinho = new Vector(3, new double[] {2, 3, 1});
-        Vector penis = Transformations.translate2D(bbzinho, 5, 5);
-        penis.print();
-        Vector bbzao = new Vector(4, new double[] {2, 3, 4, 1});
-        Vector pirocao = Transformations.translate3D(bbzao, 5, 5 ,5);
-        pirocao.print();
-        Vector receba = new Vector(3, new double[] {2, 3, 1});
-        Vector beiramar = Transformations.
+        System.out.println("Vetor 2D transladado: ");
+        vetor2dtranslate.print();
+
+
+        Vector vetor3d = new Vector(4, new double[] {2, 3, 4, 1});
+        Vector vetor3dtranslate = Transformations.translate3D(vetor3d, 5, 5 ,5);
+
+        System.out.println();
+
+        System.out.println("Vetor 3D transladado: ");
+        vetor3dtranslate.print();
+
+        System.out.println();
+
+        Vector vetor2Drotate = Transformations.rotate2d(vetor2d, 60);
+        Vector vetor3DrotateX = Transformations.rotate3dx(vetor3d, 60);
+        Vector vetor3DrotateY = Transformations.rotate3dy(vetor3d, 60);
+        Vector vetor3DrotateZ = Transformations.rotate3dz(vetor3d, 60);
+
+
+        System.out.println("Vetor de rotação 2D: ");
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2Drotate.getElements(0),
+                vetor2Drotate.getElements(1),
+                vetor2Drotate.getElements(2)
+        );
+
+        System.out.println();
+
+        System.out.println("Vetor de rotação 3D no eixo x: ");
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DrotateX.getElements(0),
+                vetor3DrotateX.getElements(1),
+                vetor3DrotateX.getElements(2),
+                vetor3DrotateX.getElements(3)
+        );
+
+        System.out.println();
+
+        System.out.println("Vetor de rotação 3D no eixo y: ");
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DrotateY.getElements(0),
+                vetor3DrotateY.getElements(1),
+                vetor3DrotateY.getElements(2),
+                vetor3DrotateY.getElements(3)
+        );
+
+        System.out.println();
+
+        System.out.println("Vetor de rotação 3D no eixo z: ");
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DrotateZ.getElements(0),
+                vetor3DrotateZ.getElements(1),
+                vetor3DrotateZ.getElements(2),
+                vetor3DrotateZ .getElements(3)
+        );
+
     }
 }
