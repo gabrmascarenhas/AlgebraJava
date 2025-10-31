@@ -122,6 +122,7 @@ public class Main {
         vetor2dtranslate.print();
 
 
+
         Vector vetor3d = new Vector(4, new double[] {2, 3, 4, 1});
         Vector vetor3dtranslate = Transformations.translate3D(vetor3d, 5, 5 ,5);
 
@@ -137,8 +138,12 @@ public class Main {
         Vector vetor3DrotateY = Transformations.rotate3dy(vetor3d, 60);
         Vector vetor3DrotateZ = Transformations.rotate3dz(vetor3d, 60);
 
+        System.out.println();
 
         System.out.println("Vetor de rotação 2D: ");
+
+        System.out.println();
+
         System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor2Drotate.getElements(0),
                 vetor2Drotate.getElements(1),
@@ -148,6 +153,9 @@ public class Main {
         System.out.println();
 
         System.out.println("Vetor de rotação 3D no eixo x: ");
+
+        System.out.println();
+
         System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
                 vetor3DrotateX.getElements(0),
                 vetor3DrotateX.getElements(1),
@@ -158,6 +166,9 @@ public class Main {
         System.out.println();
 
         System.out.println("Vetor de rotação 3D no eixo y: ");
+
+        System.out.println();
+
         System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
                 vetor3DrotateY.getElements(0),
                 vetor3DrotateY.getElements(1),
@@ -168,11 +179,171 @@ public class Main {
         System.out.println();
 
         System.out.println("Vetor de rotação 3D no eixo z: ");
+
+        System.out.println();
+
         System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
                 vetor3DrotateZ.getElements(0),
                 vetor3DrotateZ.getElements(1),
                 vetor3DrotateZ.getElements(2),
                 vetor3DrotateZ .getElements(3)
+        );
+
+        Vector vetor2DreflexedX = Transformations.reflection2DX(vetor2d);
+
+        System.out.println();
+
+        System.out.println("Vetor de reflexão 2D no eixo X: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2DreflexedX.getElements(0),
+                vetor2DreflexedX.getElements(1),
+                vetor2DreflexedX.getElements(2)
+        );
+
+        Vector vetor2DreflexedY = Transformations.reflection2DY(vetor2d);
+
+        System.out.println();
+
+        System.out.println("Vetor de reflexão 2D no eixo Y: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2DreflexedY.getElements(0),
+                vetor2DreflexedY.getElements(1),
+                vetor2DreflexedY.getElements(2)
+        );
+
+        Vector vetor3DreflexedX = Transformations.reflection3DX(vetor3d);
+        System.out.println();
+
+        System.out.println("Vetor de reflexão 3D no eixo X: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DreflexedX.getElements(0),
+                vetor3DreflexedX.getElements(1),
+                vetor3DreflexedX.getElements(2),
+                vetor3DreflexedX.getElements(3)
+        );
+
+        Vector vetor3DreflexedY = Transformations.reflection3DY(vetor3d);
+
+        System.out.println();
+
+        System.out.println("Vetor de reflexão 3D no eixo Y: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DreflexedY.getElements(0),
+                vetor3DreflexedY.getElements(1),
+                vetor3DreflexedY.getElements(2),
+                vetor3DreflexedY.getElements(3)
+        );
+
+        Vector vetor3DreflexedZ = Transformations.reflection3DZ(vetor3d);
+
+        System.out.println();
+
+        System.out.println("Vetor de reflexão 3D no eixo Z: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3DreflexedZ.getElements(0),
+                vetor3DreflexedZ.getElements(1),
+                vetor3DreflexedZ.getElements(2),
+                vetor3DreflexedZ.getElements(3)
+        );
+
+        Vector vetor2dprojectedX = Transformations.projection2DX(vetor2d);
+
+        System.out.println();
+
+        System.out.println("Vetor de projeção 2D no eixo X: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2dprojectedX.getElements(0),
+                vetor2dprojectedX.getElements(1),
+                vetor2dprojectedX.getElements(2)
+        );
+
+        Vector vetor2dprojectedY = Transformations.projection2DY(vetor2d);
+
+        System.out.println();
+
+        System.out.println("Vetor de projeção 2D no eixo Y: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2dprojectedY.getElements(0),
+                vetor2dprojectedY.getElements(1),
+                vetor2dprojectedY.getElements(2)
+        );
+
+        Vector vetor3dprojectedX= Transformations.projection3DX(vetor3d);
+
+        System.out.println();
+
+        System.out.println("Vetor de projeção 3D no eixo X: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3dprojectedX.getElements(0),
+                vetor3dprojectedX.getElements(1),
+                vetor3dprojectedX.getElements(2),
+                vetor3dprojectedX.getElements(3)
+        );
+
+        Vector vetor3dprojectedY = Transformations.projection3DY(vetor3d);
+
+        System.out.println();
+
+        System.out.println("Vetor de projeção 3D no eixo Y: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3dprojectedY.getElements(0),
+                vetor3dprojectedY.getElements(1),
+                vetor3dprojectedY.getElements(2),
+                vetor3dprojectedY.getElements(3)
+        );
+
+        Vector vetor3dprojectedZ = Transformations.projection3DZ(vetor3d);
+
+        System.out.println();
+
+        System.out.println("Vetor de projeção 3D no eixo Z: ");
+
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+                vetor3dprojectedZ.getElements(0),
+                vetor3dprojectedZ.getElements(1),
+                vetor3dprojectedZ.getElements(2),
+                vetor3dprojectedZ.getElements(3)
+        );
+
+
+        Vector vetor2dshearing = Transformations.shearing(vetor2d, 1, 0.5);
+
+        System.out.println("Cisalhamento de vetor 2D:");
+        System.out.println();
+
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
+                vetor2dshearing.getElements(0),
+                vetor2dshearing.getElements(1),
+                vetor2dshearing.getElements(2)
         );
 
     }
