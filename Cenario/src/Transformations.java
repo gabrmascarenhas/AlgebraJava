@@ -186,9 +186,9 @@ public class Transformations {
 
         Matrix R = new Matrix(4, 4, new double[]
                 {
-                        -1, 0, 0, 0,
-                        0, 1, 0, 0,
-                        0, 0, 1, 0,
+                        1, 0, 0, 0,
+                        0, -1, 0, 0,
+                        0, 0, -1, 0,
                         0, 0, 0, 1
                 });
         Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
@@ -206,9 +206,9 @@ public class Transformations {
 
         Matrix R = new Matrix(4, 4, new double[]
                 {
-                        1, 0, 0, 0,
-                        0, -1, 0, 0,
-                        0, 0, 1, 0,
+                        -1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, -1, 0,
                         0, 0, 0, 1
                 });
         Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
@@ -226,9 +226,9 @@ public class Transformations {
 
         Matrix R = new Matrix(4, 4, new double[]
                 {
-                        1, 0, 0, 0,
-                        0, 1, 0, 0,
-                        0, 0, -1, 0,
+                        -1, 0, 0, 0,
+                        0, -1, 0, 0,
+                        0, 0, 1, 0,
                         0, 0, 0, 1
                 });
         Matrix P = new Matrix(4, 1, new double[]{vetor.getElements(0), vetor.getElements(1), vetor.getElements(2), 1});
