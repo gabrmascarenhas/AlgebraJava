@@ -245,8 +245,8 @@ public class Transformations {
     public static Vector projection2DX (Vector vetor){
         Matrix R = new Matrix(3, 3, new double[]
                 {
-                        1, 0, 0,
                         0, 0, 0,
+                        0, 1, 0,
                         0, 0, 1
                 });
 
@@ -266,8 +266,8 @@ public class Transformations {
 
         Matrix R = new Matrix(3, 3, new double[]
                 {
+                        1, 0, 0,
                         0, 0, 0,
-                        0, 1, 0,
                         0, 0, 1
                 });
 
@@ -371,7 +371,6 @@ public static Vector shearing(Vector vetor, double shx, double shy){
     return shearingVetor2d;
     }
 }
-
 
 
 
