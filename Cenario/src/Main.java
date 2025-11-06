@@ -108,12 +108,29 @@ public class Main {
         solveMatrix.print();
         System.out.println("X = " + solveMatrix.getElements(0, 3) + ", Y = " + solveMatrix.getElements(1, 3) + ", Z = " + solveMatrix.getElements(2, 3));
 
+
+
+
+
+
+
+
+
+
+        //CENÁRIO 2
         System.out.println();
         System.out.printf("Cenário 2");
         System.out.println();
 
 
-        Vector vetor2d = new Vector(3, new double[] {2, 3, 1});
+        Vector vetor2d = new Vector(3, new double[] {2, 3, 1}); //DEFINIÇÃO DO VETOR 2D
+        Vector vetor3d = new Vector(4, new double[] {2, 3, 4, 1}); //DEFINIÇÃO DO VETOR 3D
+
+
+
+
+
+        //TRANSLAÇÃO
         Vector vetor2dtranslate = Transformations.translate2D(vetor2d, 5, 5);
 
         System.out.println();
@@ -121,9 +138,6 @@ public class Main {
         System.out.println("Vetor 2D transladado: ");
         vetor2dtranslate.print();
 
-
-
-        Vector vetor3d = new Vector(4, new double[] {2, 3, 4, 1});
         Vector vetor3dtranslate = Transformations.translate3D(vetor3d, 5, 5 ,5);
 
         System.out.println();
@@ -133,6 +147,11 @@ public class Main {
 
         System.out.println();
 
+
+
+
+
+        //ROTAÇÃO
         Vector vetor2Drotate = Transformations.rotate2d(vetor2d, 60);
         Vector vetor3DrotateX = Transformations.rotate3dx(vetor3d, 60);
         Vector vetor3DrotateY = Transformations.rotate3dy(vetor3d, 60);
@@ -144,10 +163,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2Drotate.getElements(0),
-                vetor2Drotate.getElements(1),
-                vetor2Drotate.getElements(2)
+                vetor2Drotate.getElements(1)
         );
 
         System.out.println();
@@ -156,11 +174,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DrotateX.getElements(0),
                 vetor3DrotateX.getElements(1),
-                vetor3DrotateX.getElements(2),
-                vetor3DrotateX.getElements(3)
+                vetor3DrotateX.getElements(2)
         );
 
         System.out.println();
@@ -169,11 +186,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DrotateY.getElements(0),
                 vetor3DrotateY.getElements(1),
-                vetor3DrotateY.getElements(2),
-                vetor3DrotateY.getElements(3)
+                vetor3DrotateY.getElements(2)
         );
 
         System.out.println();
@@ -182,13 +198,16 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DrotateZ.getElements(0),
                 vetor3DrotateZ.getElements(1),
-                vetor3DrotateZ.getElements(2),
-                vetor3DrotateZ .getElements(3)
+                vetor3DrotateZ.getElements(2)
         );
 
+
+
+
+        //REFLEXÃO
         Vector vetor2DreflexedX = Transformations.reflection2DX(vetor2d);
 
         System.out.println();
@@ -197,10 +216,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2DreflexedX.getElements(0),
-                vetor2DreflexedX.getElements(1),
-                vetor2DreflexedX.getElements(2)
+                vetor2DreflexedX.getElements(1)
         );
 
         Vector vetor2DreflexedY = Transformations.reflection2DY(vetor2d);
@@ -211,10 +229,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2DreflexedY.getElements(0),
-                vetor2DreflexedY.getElements(1),
-                vetor2DreflexedY.getElements(2)
+                vetor2DreflexedY.getElements(1)
         );
 
         Vector vetor3DreflexedX = Transformations.reflection3DX(vetor3d);
@@ -224,11 +241,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DreflexedX.getElements(0),
                 vetor3DreflexedX.getElements(1),
-                vetor3DreflexedX.getElements(2),
-                vetor3DreflexedX.getElements(3)
+                vetor3DreflexedX.getElements(2)
         );
 
         Vector vetor3DreflexedY = Transformations.reflection3DY(vetor3d);
@@ -239,11 +255,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DreflexedY.getElements(0),
                 vetor3DreflexedY.getElements(1),
-                vetor3DreflexedY.getElements(2),
-                vetor3DreflexedY.getElements(3)
+                vetor3DreflexedY.getElements(2)
         );
 
         Vector vetor3DreflexedZ = Transformations.reflection3DZ(vetor3d);
@@ -254,13 +269,16 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3DreflexedZ.getElements(0),
                 vetor3DreflexedZ.getElements(1),
-                vetor3DreflexedZ.getElements(2),
-                vetor3DreflexedZ.getElements(3)
+                vetor3DreflexedZ.getElements(2)
         );
 
+
+
+
+        //PROJEÇÃO
         Vector vetor2dprojectedX = Transformations.projection2DX(vetor2d);
 
         System.out.println();
@@ -269,10 +287,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2dprojectedX.getElements(0),
-                vetor2dprojectedX.getElements(1),
-                vetor2dprojectedX.getElements(2)
+                vetor2dprojectedX.getElements(1)
         );
 
         Vector vetor2dprojectedY = Transformations.projection2DY(vetor2d);
@@ -283,10 +300,9 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2dprojectedY.getElements(0),
-                vetor2dprojectedY.getElements(1),
-                vetor2dprojectedY.getElements(2)
+                vetor2dprojectedY.getElements(1)
         );
 
         Vector vetor3dprojectedX= Transformations.projection3DX(vetor3d);
@@ -297,11 +313,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3dprojectedX.getElements(0),
                 vetor3dprojectedX.getElements(1),
-                vetor3dprojectedX.getElements(2),
-                vetor3dprojectedX.getElements(3)
+                vetor3dprojectedX.getElements(2)
         );
 
         Vector vetor3dprojectedY = Transformations.projection3DY(vetor3d);
@@ -312,11 +327,10 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3dprojectedY.getElements(0),
                 vetor3dprojectedY.getElements(1),
-                vetor3dprojectedY.getElements(2),
-                vetor3dprojectedY.getElements(3)
+                vetor3dprojectedY.getElements(2)
         );
 
         Vector vetor3dprojectedZ = Transformations.projection3DZ(vetor3d);
@@ -327,23 +341,24 @@ public class Main {
 
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f, %.4f]%n",
                 vetor3dprojectedZ.getElements(0),
                 vetor3dprojectedZ.getElements(1),
-                vetor3dprojectedZ.getElements(2),
-                vetor3dprojectedZ.getElements(3)
+                vetor3dprojectedZ.getElements(2)
         );
 
 
+
+
+        //CISALHAMENTO
         Vector vetor2dshearing = Transformations.shearing(vetor2d, 1, 0.5);
 
         System.out.println("Cisalhamento de vetor 2D:");
         System.out.println();
 
-        System.out.printf("[%.4f, %.4f, %.4f]%n",
+        System.out.printf("[%.4f, %.4f]%n",
                 vetor2dshearing.getElements(0),
-                vetor2dshearing.getElements(1),
-                vetor2dshearing.getElements(2)
+                vetor2dshearing.getElements(1)
         );
 
     }
