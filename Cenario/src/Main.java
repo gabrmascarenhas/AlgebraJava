@@ -361,5 +361,62 @@ public class Main {
                 vetor2dshearing.getElements(1)
         );
 
+
+        //Cenário 3: 02/12/25
+        System.out.println("Cenário 3 ---------------------------------------------------");
+        double[] A5elements = {
+                0, 0, 1, 0,
+                1, 0, 0, 0,
+                1, 1, 0, 0,
+                0, 1, 0, 0
+        };
+        Matrix A5 = new Matrix(4, 4, A5elements);
+        System.out.println();
+        System.out.println("Hits Exercício 5");
+        Hits.runHITS(A5);
+        System.out.println();
+        double[] A6elements = {
+                0, 1, 1, 0,
+                0, 0, 1, 0,
+                1, 0, 0, 1,
+                1, 0, 0, 0
+        };
+        Matrix A6 = new Matrix(4, 4, A6elements);
+        System.out.println();
+        System.out.println("Hits Exercício 6");
+        Hits.runHITS(A6);
+        System.out.println();
+
+        double[] A7elements = {
+                0, 1, 1, 1, 0,
+                1, 0, 0, 0, 1,
+                0, 0, 0, 0, 1,
+                0, 1, 0, 0, 0,
+                0, 1, 1, 0, 0
+        };
+        Matrix A7 = new Matrix(5, 5, A7elements);
+        System.out.println();
+        System.out.println("Hits Exercício 7");
+        Hits.runHITS(A7);
+        System.out.println();
+
+        double[] A8elements = {
+                0,1,1,0,1,1,0,0,0,1,
+                0,0,1,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,1,
+                0,1,1,0,0,1,1,0,0,1,
+                0,0,0,1,0,0,0,0,0,0,
+                0,1,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,1,0,
+                0,0,0,0,0,1,0,0,0,0,
+                0,1,1,0,0,1,0,1,0,1,
+                0,0,0,0,0,1,0,0,0,0
+        };
+        Matrix A8 = new Matrix(10, 10, A8elements);
+        System.out.println();
+        System.out.println("Hits Exercício 8");
+        Hits.runHITS(A8);
+
+
     }
 }
