@@ -57,12 +57,9 @@ public class Hits {
             a0 = an;
         }
 
-        // -----------------------------
-        // Insertion Sort para ordenar resultados
-        // -----------------------------
         double[] valores = an.getAllElements(); // vetor de autoridade
 
-
+// fazendo sort
         for (int i = 1; i < n; i++) {
             double keyVal = valores[i];
             String keyName = names[i];
@@ -78,7 +75,7 @@ public class Hits {
             names[j + 1] = keyName;
         }
 
-        // Exibe resultados ordenados
+        
         System.out.println("Autoridade final (ordenada decrescente):");
         for (int i = 0; i < n; i++) {
             System.out.println(names[i] + ": " + valores[i]);
