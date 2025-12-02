@@ -372,7 +372,7 @@ public class Main {
         };
         Matrix A5 = new Matrix(4, 4, A5elements);
         System.out.println();
-        System.out.println("Hits Exercício 5");
+        System.out.println("PageRank Exercício 5");
         PageRank.runPageRank(A5);
         System.out.println();
         double[] A6elements = {
@@ -383,7 +383,7 @@ public class Main {
         };
         Matrix A6 = new Matrix(4, 4, A6elements);
         System.out.println();
-        System.out.println("Hits Exercício 6");
+        System.out.println("PageRank Exercício 6");
         PageRank.runPageRank(A6);
         System.out.println();
 
@@ -396,7 +396,7 @@ public class Main {
         };
         Matrix A7 = new Matrix(5, 5, A7elements);
         System.out.println();
-        System.out.println("Hits Exercício 7");
+        System.out.println("PageRank Exercício 7");
         PageRank.runPageRank(A7);
         System.out.println();
 
@@ -414,7 +414,7 @@ public class Main {
         };
         Matrix A8 = new Matrix(10, 10, A8elements);
         System.out.println();
-        System.out.println("Hits Exercício 8");
+        System.out.println("PageRank Exercício 8");
         PageRank.runPageRank(A8);
 
 
