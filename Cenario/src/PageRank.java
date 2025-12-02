@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class Hits {
+public class PageRank {
 
-    public static void runHITS(Matrix A) {
+    public static void runPageRank(Matrix A) {
 
         int n = A.getRows();
 
